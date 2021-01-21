@@ -3,7 +3,7 @@ import { TextField, Button, Switch, FormControlLabel } from "@material-ui/core";
 
 //criar uma função que vai funcionar como um componente do React
 //o return que vai fazer a renderização de fato
-function FormularioCadastro({aoEnviar}) {
+function FormularioCadastro({aoEnviar, validarCPF}) {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
@@ -50,7 +50,8 @@ function FormularioCadastro({aoEnviar}) {
         }}
 
         onBlur={(event) =>{
-          setErros({cpf:{valido:false, texto:"O CPF deve ter onze dígitos"}})
+          const ehValido = validarCPF(cpf);
+          setErros({cpf:ehValido})
         }}
         error={!erros.cpf.valido}
         helperText={erros.cpf.texto}
