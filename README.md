@@ -1,4 +1,4 @@
-## Formulário de Cadastro 
+# Formulário de Cadastro 
 Formulário de cadastro para novos clientes com campos para Nome, Sobrenome, CPF e opções para marcar se deseja receber Promoções e/ou Novidades.
 Desenvolvido com React JS.
 
